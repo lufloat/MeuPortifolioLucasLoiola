@@ -5,12 +5,22 @@ export default function FeaturedVideos() {
     {
       title: 'CRM Impressoras',
       description: 'Desenvolvi um dashboard completo em C# para extração e análise de dados de impressoras 3D, aplicando os principais componentes do ecossistema .NET. O projeto foi estruturado utilizando models bem definidos, criação de APIs REST, integração com banco de dados PostgreSQL, gerenciamento via pgAdmin e documentação das rotas com Swagger.A aplicação realiza a integração com APIs das impressoras para coleta automática de informações operacionais, processando esses dados de forma analítica e apresentando-os em um dashboard para acompanhamento e tomada de decisão.',
-      src: '/videos/dash.mp4',
+      src: '/videos/dashup.mp4',
     },
     {
       title: 'Automação IA',
       description: 'Projeto de Machine Learning desenvolvido em Python com foco em identificação de pessoas. O sistema utiliza técnicas de visão computacional e aprendizado supervisionado para reconhecer e diferenciar indivíduos a partir de imagens ou vídeos. Foram aplicados processos de pré-processamento, extração de características e treinamento de modelo, permitindo que a aplicação realizasse a detecção e o reconhecimento facial de forma eficiente.',
       src: '/videos/Learing.mp4',
+    },
+    { 
+      title: '🚀 ERP Dashboard completo — UX/UI Design',
+      description: 'Projeto desenvolvido no Figma com foco em usabilidade, visualização de dados e experiência do usuário para gestão de impressão 3D.',
+      src: '/videos/dashfigma.mp4',
+    },
+    { 
+      title: 'Site de Gerenciamento para Impressoras 3D — UX/UI Design',
+      description: 'Projeto desenvolvido no Figma com foco na criação de uma interface moderna e intuitiva para monitoramento e gerenciamento de impressoras 3D.',
+      src: '/videos/site3d.mp4',
     }
   ]
 
