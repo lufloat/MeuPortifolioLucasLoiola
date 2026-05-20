@@ -16,6 +16,38 @@ const videoProjects = [
   },
   {
     id: 'v2',
+    name: 'CRM Impressoras',
+    desc: 'Dashboard completo em C# para extração e análise de dados de impressoras 3D. APIs REST, PostgreSQL, pgAdmin e Swagger. Integração com APIs das impressoras para coleta automática de dados operacionais e tomada de decisão.',
+    url: '/videos/dashup.mp4',
+    video: true,
+    tech: ['C#', '.NET', 'Python'],
+  },
+  {
+    id: 'v3',
+    name: 'Automação IA – Machine Learning',
+    desc: 'Projeto de Machine Learning em Python com foco em identificação de pessoas via visão computacional. Pré-processamento, extração de características e reconhecimento facial eficiente.',
+    url: '/videos/Learing.mp4',
+    video: true,
+    tech: ['Python'],
+  },
+  {
+    id: 'v4',
+    name: '🚀 ERP Dashboard completo — UX/UI Design',
+    desc: 'Projeto desenvolvido no Figma com foco em usabilidade, visualização de dados e experiência do usuário para gestão de impressão 3D.',
+    url: '/videos/dashfigma.mp4',
+    video: true,
+    tech: ['Design & Figma', 'UX'],
+  },
+  {
+    id: 'v5',
+    name: 'Site de Gerenciamento para Impressoras 3D — UX/UI Design',
+    desc: 'Interface moderna e intuitiva para monitoramento e gerenciamento de impressoras 3D, desenvolvida no Figma.',
+    url: '/videos/site3d.mp4',
+    video: true,
+    tech: ['Design & Figma', 'UX'],
+  },
+  {
+    id: 'v6',
     name: 'Site Dashboard completo para sites de Impressão 3D',
     desc: 'Dashboard completo com gestão de pedidos, produtos e clientes para e-commerce de impressão 3D.',
     url: '/projects/crm.png',
@@ -65,19 +97,9 @@ const imageProjects = [
 ]
 
 const filterButtons = [
-  'All',
-  'Design & Figma',
-  'React',
-  'CSS',
-  'JavaScript',
-  'Typescript',
-  'TailwindCSS',
-  'NextJS',
-  'C#',
-  '.NET',
-  'Python',
-  'Django',
-  'UX',
+  'All', 'Design & Figma', 'React', 'CSS', 'JavaScript',
+  'Typescript', 'TailwindCSS', 'NextJS', 'C#', '.NET',
+  'Python', 'Django', 'UX',
 ]
 
 // ─── helpers ──────────────────────────────────────────────────────────────────
@@ -124,19 +146,22 @@ const VideoCard = ({ data, index }) => (
     initial={{ opacity: 0, y: 30 }}
     animate={{ opacity: 1, y: 0 }}
     exit={{ opacity: 0, scale: 0.9 }}
-    transition={{ duration: 0.4, delay: index * 0.08 }}
+    transition={{ duration: 0.4, delay: index * 0.06 }}
     className="group relative rounded-2xl overflow-hidden border border-white/10 shadow-xl cursor-pointer w-full"
   >
     <div className="relative w-full aspect-video bg-black">
       {data.video ? (
         <video
-          src={data.url}
-          autoPlay
-          loop
+          className="w-full h-full object-cover"
           muted
+          controls
+          loop
           playsInline
-          className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105"
-        />
+          onMouseEnter={(e) => e.currentTarget.play()}
+          onMouseLeave={(e) => e.currentTarget.pause()}
+        >
+          <source src={data.url} type="video/mp4" />
+        </video>
       ) : (
         <img
           src={data.url}
@@ -145,15 +170,15 @@ const VideoCard = ({ data, index }) => (
         />
       )}
       {data.video && (
-        <span className="absolute top-3 left-3 text-[10px] font-bold px-2 py-0.5 rounded-full bg-rose-600/90 text-white tracking-widest uppercase">
+        <span className="absolute top-3 left-3 text-[10px] font-bold px-2 py-0.5 rounded-full bg-rose-600/90 text-white tracking-widest uppercase pointer-events-none">
           ▶ Vídeo
         </span>
       )}
     </div>
-    <div className="p-5 bg-white/5 backdrop-blur-sm">
+    <div className="p-5 bg-gradient-to-br from-red-700/60 via-fuchsia-900/60 to-blue-950/60 backdrop-blur-sm">
       <h3 className="text-white font-semibold text-base mb-1 leading-snug">{data.name}</h3>
       {data.desc?.trim() && (
-        <p className="text-white/60 text-xs mb-3 leading-relaxed">{data.desc}</p>
+        <p className="text-white/70 text-xs mb-3 leading-relaxed">{data.desc}</p>
       )}
       <div className="flex flex-wrap gap-1 mb-3">
         {data.tech.map((t, i) => <TechTag key={i} label={t} />)}
@@ -205,7 +230,7 @@ export default function Projects() {
         Projetos
       </motion.h2>
 
-      {/* toggle vídeo / imagem */}
+      {/* toggle */}
       <div className="flex justify-center mb-8">
         <div className="flex gap-1 p-1 rounded-2xl bg-white/5 border border-white/10 backdrop-blur-sm">
           {TABS.map(tab => (
@@ -230,7 +255,7 @@ export default function Projects() {
         </div>
       </div>
 
-      {/* filtros de tecnologia — só aparece na aba de imagens */}
+      {/* filtros — só na aba imagens */}
       <AnimatePresence>
         {activeTab === 'images' && (
           <motion.div
@@ -245,7 +270,7 @@ export default function Projects() {
               <button
                 key={btn}
                 onClick={() => setActiveFilter(btn)}
-                className={`relative px-4 py-1.5 rounded-full text-xs font-semibold border transition-all duration-200 ${
+                className={`px-4 py-1.5 rounded-full text-xs font-semibold border transition-all duration-200 ${
                   activeFilter === btn
                     ? 'bg-gradient-to-r from-yellow-700 via-fuchsia-800 to-rose-700 border-lime-500/50 text-white'
                     : 'bg-transparent border-white/20 text-white/50 hover:text-white/80 hover:border-white/40'
@@ -261,7 +286,6 @@ export default function Projects() {
       {/* conteúdo */}
       <AnimatePresence mode="wait">
 
-        {/* ── imagens ── */}
         {activeTab === 'images' && (
           <motion.div
             key="images"
@@ -270,27 +294,22 @@ export default function Projects() {
             exit={{ opacity: 0, y: -20 }}
             transition={{ duration: 0.35 }}
           >
-            <AnimatePresence>
-              <div className="flex flex-wrap justify-center gap-5">
-                {filteredImages.length > 0 ? (
-                  filteredImages.map((p, i) => (
-                    <ImageCard key={p.id} data={p} index={i} />
-                  ))
-                ) : (
-                  <motion.p
-                    initial={{ opacity: 0 }}
-                    animate={{ opacity: 1 }}
-                    className="text-white/40 text-sm py-12"
-                  >
-                    Nenhum projeto com essa tecnologia.
-                  </motion.p>
-                )}
-              </div>
-            </AnimatePresence>
+            <div className="flex flex-wrap justify-center gap-5">
+              {filteredImages.length > 0 ? (
+                filteredImages.map((p, i) => <ImageCard key={p.id} data={p} index={i} />)
+              ) : (
+                <motion.p
+                  initial={{ opacity: 0 }}
+                  animate={{ opacity: 1 }}
+                  className="text-white/40 text-sm py-12"
+                >
+                  Nenhum projeto com essa tecnologia.
+                </motion.p>
+              )}
+            </div>
           </motion.div>
         )}
 
-        {/* ── vídeos ── */}
         {activeTab === 'videos' && (
           <motion.div
             key="videos"
@@ -300,9 +319,7 @@ export default function Projects() {
             transition={{ duration: 0.35 }}
           >
             <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-              {videoProjects.map((p, i) => (
-                <VideoCard key={p.id} data={p} index={i} />
-              ))}
+              {videoProjects.map((p, i) => <VideoCard key={p.id} data={p} index={i} />)}
             </div>
           </motion.div>
         )}
