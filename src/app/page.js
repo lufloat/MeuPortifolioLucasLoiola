@@ -47,7 +47,6 @@ export default function Home() {
           <Skills />
           <Reviews />
           <Projects />
-          <FeaturedVideos />
           <PricingPlans />
           <Contact />
           <Questions />
