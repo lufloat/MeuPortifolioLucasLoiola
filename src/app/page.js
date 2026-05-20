@@ -11,7 +11,6 @@ import Questions from '@/components/Questions'
 import Navbar from '@/components/Navbar'
 import Toggle from '@/components/sub/Toggle'
 import Load from '@/components/sub/Load'
-import FeaturedVideos from '@/components/FeaturedVideos'
 import { useState, useRef, useEffect } from 'react'
 
 export default function Home() {
