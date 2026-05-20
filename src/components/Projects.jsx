@@ -2,13 +2,13 @@
 import { useState } from 'react'
 import { motion, AnimatePresence } from 'framer-motion'
 
-// ─── dados ───────────────────────────────────────────────────────────────────
+// ─── dados ────────────────────────────────────────────────────────────────────
 
 const videoProjects = [
   {
     id: 'v1',
     name: 'EstimServ – Sistema de Orçamentos Inteligente',
-    desc: 'Sistema inteligente para geração de orçamentos em PDF, integrado com agenda e dashboard de gestão comercial. Fluxo completo para acompanhamento de orçamentos, aprovações e status em tempo real.',
+    desc: 'Sistema inteligente para geração de orçamentos em PDF, integrado com agenda e dashboard de gestão comercial. Fluxo completo para acompanhamento de orçamentos, aprovações e status em tempo real. Desenvolvido em React + C#/.NET + Supabase.',
     url: '/videos/estimserv.mp4',
     video: true,
     link: 'https://www.estimserv.com.br/login',
@@ -64,7 +64,23 @@ const imageProjects = [
   { id: 'i13', name: '', desc: '', url: '/projects/15.jpg', tech: ['Design & Figma'] },
 ]
 
-// ─── tag de tecnologia ────────────────────────────────────────────────────────
+const filterButtons = [
+  'All',
+  'Design & Figma',
+  'React',
+  'CSS',
+  'JavaScript',
+  'Typescript',
+  'TailwindCSS',
+  'NextJS',
+  'C#',
+  '.NET',
+  'Python',
+  'Django',
+  'UX',
+]
+
+// ─── helpers ──────────────────────────────────────────────────────────────────
 
 const TechTag = ({ label }) => (
   <span className="text-[10px] px-2 py-0.5 rounded-full bg-gradient-to-r from-yellow-700 via-fuchsia-900 to-rose-700 text-white border border-lime-500/50">
@@ -72,15 +88,15 @@ const TechTag = ({ label }) => (
   </span>
 )
 
-// ─── card de imagem ───────────────────────────────────────────────────────────
+// ─── cards ────────────────────────────────────────────────────────────────────
 
 const ImageCard = ({ data, index }) => (
   <motion.div
-    key={data.id}
+    layout
     initial={{ opacity: 0, y: 30 }}
-    whileInView={{ opacity: 1, y: 0 }}
-    transition={{ duration: 0.4, delay: index * 0.04 }}
-    viewport={{ once: true }}
+    animate={{ opacity: 1, y: 0 }}
+    exit={{ opacity: 0, scale: 0.9 }}
+    transition={{ duration: 0.35, delay: index * 0.04 }}
     className="group relative w-[300px] h-[200px] rounded-2xl overflow-hidden border border-white/10 shadow-lg cursor-pointer flex-shrink-0"
   >
     <img
@@ -102,18 +118,15 @@ const ImageCard = ({ data, index }) => (
   </motion.div>
 )
 
-// ─── card de vídeo ────────────────────────────────────────────────────────────
-
 const VideoCard = ({ data, index }) => (
   <motion.div
-    key={data.id}
+    layout
     initial={{ opacity: 0, y: 30 }}
-    whileInView={{ opacity: 1, y: 0 }}
+    animate={{ opacity: 1, y: 0 }}
+    exit={{ opacity: 0, scale: 0.9 }}
     transition={{ duration: 0.4, delay: index * 0.08 }}
-    viewport={{ once: true }}
     className="group relative rounded-2xl overflow-hidden border border-white/10 shadow-xl cursor-pointer w-full"
   >
-    {/* mídia */}
     <div className="relative w-full aspect-video bg-black">
       {data.video ? (
         <video
@@ -131,16 +144,12 @@ const VideoCard = ({ data, index }) => (
           className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105"
         />
       )}
-
-      {/* badge "AO VIVO" só para vídeos */}
       {data.video && (
         <span className="absolute top-3 left-3 text-[10px] font-bold px-2 py-0.5 rounded-full bg-rose-600/90 text-white tracking-widest uppercase">
           ▶ Vídeo
         </span>
       )}
     </div>
-
-    {/* info */}
     <div className="p-5 bg-white/5 backdrop-blur-sm">
       <h3 className="text-white font-semibold text-base mb-1 leading-snug">{data.name}</h3>
       {data.desc?.trim() && (
@@ -166,17 +175,21 @@ const VideoCard = ({ data, index }) => (
   </motion.div>
 )
 
-// ─── toggle ───────────────────────────────────────────────────────────────────
+// ─── componente principal ─────────────────────────────────────────────────────
 
 const TABS = [
   { key: 'images', label: 'Projetos em Imagens', emoji: '🖼️' },
   { key: 'videos', label: 'Projetos em Vídeo',   emoji: '🎬' },
 ]
 
-// ─── COMPONENTE PRINCIPAL ─────────────────────────────────────────────────────
-
 export default function Projects() {
-  const [activeTab, setActiveTab] = useState('images')
+  const [activeTab, setActiveTab]       = useState('images')
+  const [activeFilter, setActiveFilter] = useState('All')
+
+  const filteredImages =
+    activeFilter === 'All'
+      ? imageProjects
+      : imageProjects.filter(p => p.tech.includes(activeFilter))
 
   return (
     <section id="projects" className="py-16 px-4 max-w-6xl mx-auto">
@@ -192,17 +205,15 @@ export default function Projects() {
         Projetos
       </motion.h2>
 
-      {/* toggle */}
-      <div className="flex justify-center mb-10">
+      {/* toggle vídeo / imagem */}
+      <div className="flex justify-center mb-8">
         <div className="flex gap-1 p-1 rounded-2xl bg-white/5 border border-white/10 backdrop-blur-sm">
           {TABS.map(tab => (
             <button
               key={tab.key}
-              onClick={() => setActiveTab(tab.key)}
+              onClick={() => { setActiveTab(tab.key); setActiveFilter('All') }}
               className={`relative px-5 py-2 rounded-xl text-sm font-semibold transition-all duration-300 flex items-center gap-2 ${
-                activeTab === tab.key
-                  ? 'text-white'
-                  : 'text-white/40 hover:text-white/70'
+                activeTab === tab.key ? 'text-white' : 'text-white/40 hover:text-white/70'
               }`}
             >
               {activeTab === tab.key && (
@@ -219,10 +230,38 @@ export default function Projects() {
         </div>
       </div>
 
+      {/* filtros de tecnologia — só aparece na aba de imagens */}
+      <AnimatePresence>
+        {activeTab === 'images' && (
+          <motion.div
+            key="filters"
+            initial={{ opacity: 0, y: -10 }}
+            animate={{ opacity: 1, y: 0 }}
+            exit={{ opacity: 0, y: -10 }}
+            transition={{ duration: 0.25 }}
+            className="flex flex-wrap justify-center gap-2 mb-10"
+          >
+            {filterButtons.map(btn => (
+              <button
+                key={btn}
+                onClick={() => setActiveFilter(btn)}
+                className={`relative px-4 py-1.5 rounded-full text-xs font-semibold border transition-all duration-200 ${
+                  activeFilter === btn
+                    ? 'bg-gradient-to-r from-yellow-700 via-fuchsia-800 to-rose-700 border-lime-500/50 text-white'
+                    : 'bg-transparent border-white/20 text-white/50 hover:text-white/80 hover:border-white/40'
+                }`}
+              >
+                {btn}
+              </button>
+            ))}
+          </motion.div>
+        )}
+      </AnimatePresence>
+
       {/* conteúdo */}
       <AnimatePresence mode="wait">
 
-        {/* ── ABA IMAGENS ── */}
+        {/* ── imagens ── */}
         {activeTab === 'images' && (
           <motion.div
             key="images"
@@ -231,15 +270,27 @@ export default function Projects() {
             exit={{ opacity: 0, y: -20 }}
             transition={{ duration: 0.35 }}
           >
-            <div className="flex flex-wrap justify-center gap-5">
-              {imageProjects.map((p, i) => (
-                <ImageCard key={p.id} data={p} index={i} />
-              ))}
-            </div>
+            <AnimatePresence>
+              <div className="flex flex-wrap justify-center gap-5">
+                {filteredImages.length > 0 ? (
+                  filteredImages.map((p, i) => (
+                    <ImageCard key={p.id} data={p} index={i} />
+                  ))
+                ) : (
+                  <motion.p
+                    initial={{ opacity: 0 }}
+                    animate={{ opacity: 1 }}
+                    className="text-white/40 text-sm py-12"
+                  >
+                    Nenhum projeto com essa tecnologia.
+                  </motion.p>
+                )}
+              </div>
+            </AnimatePresence>
           </motion.div>
         )}
 
-        {/* ── ABA VÍDEOS ── */}
+        {/* ── vídeos ── */}
         {activeTab === 'videos' && (
           <motion.div
             key="videos"
