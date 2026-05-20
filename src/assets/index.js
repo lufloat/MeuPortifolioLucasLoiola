@@ -161,7 +161,7 @@ export const projectsData = [
   {
     name: 'EstimServ – Sistema de Orçamentos Inteligente',
     desc: 'Sistema inteligente para geração de orçamentos em PDF, integrado com agenda e dashboard de gestão comercial. Fluxo completo para acompanhamento de orçamentos, aprovações e status em tempo real. Desenvolvido em React + C#/.NET + Supabase.',
-    url: '/videos/estimserv.mp4',
+    url: 'projects/FotoSistema.png',
     video: true,
     tech: ['React', 'C#', '.NET', 'UX', 'CSS'],
   },
