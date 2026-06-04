@@ -51,8 +51,7 @@ import ArrowLeftSFillIcon from 'remixicon-react/ArrowLeftSFillIcon'
 export const downloadIcon = <DownloadLineIcon />
 export const arrowLeftIcon = <ArrowLeftSFillIcon />
 
-export const aboutText = "Desenvolvedor Full Stack com experiência em C#, .NET, Python, APIs REST, Clean Architecture, PostgreSQL, React e Next.js. Atuo no desenvolvimento de sistemas escaláveis e soluções web modernas, aplicando boas práticas de arquitetura, performance e qualidade de software. Possuo também conhecimentos em UX/UI Design e Figma, contribuindo para a criação de produtos digitais com foco em usabilidade e experiência do usuário";
-
+export const aboutText = "Desenvolvedor Full Stack com experiência em C#, .NET, Python, APIs REST, Clean Architecture, PostgreSQL, React e Next.js. Atuo no desenvolvimento de sistemas escaláveis e soluções web modernas, aplicando boas práticas de arquitetura, performance e qualidade de software. Possuo também conhecimentos em UX/UI Design e Figma, contribuindo para a criação de produtos digitais com foco em usabilidade e experiência do usuário."
 export const experienceData = [
   {
     year: 6,
