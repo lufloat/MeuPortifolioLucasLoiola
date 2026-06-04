@@ -51,11 +51,11 @@ import ArrowLeftSFillIcon from 'remixicon-react/ArrowLeftSFillIcon'
 export const downloadIcon = <DownloadLineIcon />
 export const arrowLeftIcon = <ArrowLeftSFillIcon />
 
-export const aboutText = "Sou desenvolvedor full-stack com forte interesse em design e experiência do usuário, unindo tecnologia e estética na criação de soluções digitais completas. Atuo no back-end com C#, .NET, Python e Django na construção de sistemas estruturados e escaláveis, e no front-end com React e Next.js, além de experiência com HTML, CSS e Tailwind para desenvolvimento de interfaces responsivas e organizadas. Trabalho com PostgreSQL para modelagem eficiente de dados e utilizo Figma para prototipação e criação de layouts intuitivos. Busco integrar performance, clareza visual, usabilidade e qualidade de código em cada projeto.";
+export const aboutText = "Desenvolvedor Full Stack com experiência em C#, .NET, Python, APIs REST, Clean Architecture, PostgreSQL, React e Next.js. Atuo no desenvolvimento de sistemas escaláveis e soluções web modernas, aplicando boas práticas de arquitetura, performance e qualidade de software. Possuo também conhecimentos em UX/UI Design e Figma, contribuindo para a criação de produtos digitais com foco em usabilidade e experiência do usuário";
 
 export const experienceData = [
   {
-    year: 2,
+    year: 6,
     title: 'Grupo Jaime Câmara ( 2021 - 2024)',
     education: 'Faculdade : Anhnaguera e cursos Alura e Udemy.',
     experience: [
@@ -64,7 +64,7 @@ export const experienceData = [
     ],
   },
   {
-    year: 2,
+    year: 5,
     title: 'Faculdade Engenharia de Software (2024 - 2027)',
     education: 'Faculdade Anhanguera',
     experience: [
@@ -73,7 +73,7 @@ export const experienceData = [
     ],
   },
   {
-    year: 5,
+    year: 4,
     title: 'Certificações Alura e Udemy',
     education: 'Além da graduação em Engenharia de Software, realizo formação contínua por meio de cursos especializados na Alura e Udemy, com foco em desenvolvimento full stack, arquitetura de software e tecnologias modernas',
     experience: [
@@ -82,7 +82,7 @@ export const experienceData = [
     ],
   },
   {
-    year: 6,
+    year: 3,
     title: 'Programador C# - Grupo Odilon Santos (2025 - atual)',
     education: 'Responsável pelo desenvolvimento de um sistema CRM voltado para gestão de impressoras, incluindo criação de funcionalidades, estruturação do sistema e design de layouts para a interface.',
     experience: [
@@ -182,62 +182,7 @@ export const projectsData = [
     url: '/projects/crm.png',
     tech: ['HTML', 'CSS', 'JavaScript', 'React', 'TailwindCSS', 'C#', '.NET'],
   },
-  {
-    name: '4',
-    desc: '',
-    url: '/projects/5.jpg',
-    tech: ['Design & Figma'],
-  },
-  {
-    name: '5',
-    desc: '.',
-    url: '/projects/6.jpg',
-    tech: ['Design & Figma'],
-  },
-  {
-    name: '6',
-    desc: '.',
-    url: '/projects/8.jpg',
-    tech: ['Design & Figma'],
-  },
-  {
-    name: '7',
-    desc: '',
-    url: '/projects/9.jpg',
-    tech: ['Design & Figma'],
-  },
-  {
-    name: '8',
-    desc: ' ',
-    url: '/projects/10.jpg',
-    tech: ['Design & Figma'],
-  },
-  {
-    name: '9',
-    desc: '.',
-    url: '/projects/12.jpg',
-    tech: ['Design & Figma'],
-  },
-  {
-    name: '10',
-    desc: '',
-    url: '/projects/1.jpg',
-    tech: ['Design & Figma'],
-  },
-  {
-    name: '10',
-    desc: '',
-    url: '/projects/13.jpg',
-    tech: ['Design & Figma'],
-  },
-  {
-    name: '10',
-    desc: '',
-    url: '/projects/15.jpg',
-    tech: ['Design & Figma'],
-  },
-]
-
+  
 export const projectsButton = [
   'All',
   'Design & Figma',
