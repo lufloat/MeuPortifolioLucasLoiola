@@ -56,24 +56,15 @@ export const aboutText = "Desenvolvedor Full Stack com experiência em C#, .NET,
 export const experienceData = [
   {
     year: 6,
-    title: 'Grupo Jaime Câmara ( 2021 - 2024)',
-    education: 'Faculdade : Anhnaguera e cursos Alura e Udemy.',
+    title: 'Programador C# - Grupo Odilon Santos (2025 - atual)',
+    education: 'Responsável pelo desenvolvimento de um sistema CRM voltado para gestão de impressoras, incluindo criação de funcionalidades, estruturação do sistema e design de layouts para a interface.',
     experience: [
-      '- Criação de artes para o jornal O Popular, e rádios. Utilizando ferramentas como Photoshop e Illustrator.',
-      '- Criação de peças para os sites O Popular.',
+      '- Desenvolvimento de aplicação em C#',
+      '- Construção de CRM para gerenciamento de impressoras',
     ],
   },
   {
     year: 5,
-    title: 'Faculdade Engenharia de Software (2024 - 2027)',
-    education: 'Faculdade Anhanguera',
-    experience: [
-      '- Sistemas full stack',
-      '- Estruturar soluções',
-    ],
-  },
-  {
-    year: 4,
     title: 'Certificações Alura e Udemy',
     education: 'Além da graduação em Engenharia de Software, realizo formação contínua por meio de cursos especializados na Alura e Udemy, com foco em desenvolvimento full stack, arquitetura de software e tecnologias modernas',
     experience: [
@@ -82,12 +73,21 @@ export const experienceData = [
     ],
   },
   {
-    year: 3,
-    title: 'Programador C# - Grupo Odilon Santos (2025 - atual)',
-    education: 'Responsável pelo desenvolvimento de um sistema CRM voltado para gestão de impressoras, incluindo criação de funcionalidades, estruturação do sistema e design de layouts para a interface.',
+    year: 4,
+    title: 'Faculdade Engenharia de Software (2024 - 2027)',
+    education: 'Faculdade Anhanguera',
     experience: [
-      '- Desenvolvimento de aplicação em C#',
-      '- Construção de CRM para gerenciamento de impressoras',
+      '- Sistemas full stack',
+      '- Estruturar soluções',
+    ],
+  },
+  {
+    year: 3,
+    title: 'Grupo Jaime Câmara (2021 - 2024)',
+    education: 'Faculdade Anhanguera e cursos Alura e Udemy.',
+    experience: [
+      '- Criação de artes para o jornal O Popular e rádios utilizando Photoshop e Illustrator.',
+      '- Criação de peças digitais para os portais e sites do Grupo Jaime Câmara.',
     ],
   },
 ]
