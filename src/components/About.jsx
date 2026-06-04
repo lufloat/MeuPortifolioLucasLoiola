@@ -25,7 +25,7 @@ const About = () => {
             {aboutText}
           </p>
           <a
-            href="/public/projects/Lucas Fernandes Loiola - Dev .pdf"
+            href="/projects/Lucas Fernandes Loiola - Dev .pdf"
             download=""
             className="w-max flex items-center gap-x-2 mt-6 rounded-full border-2 border-lime-600 bg-gradient-to-br from-yellow-700 via-fuchsia-900 to-rose-700  px-3 py-2 font-light text-white hover:bg-lime-600 transition-colors"
           >
