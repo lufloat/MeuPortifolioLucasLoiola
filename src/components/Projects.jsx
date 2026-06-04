@@ -84,16 +84,7 @@ const imageProjects = [
     desc: 'Dashboard completo para gerenciamento de pedidos e produtos.',
     url: '/projects/crm.png',
     tech: ['HTML', 'CSS', 'JavaScript', 'React', 'TailwindCSS', 'C#', '.NET'],
-  },
-  { id: 'i5',  name: '', desc: '', url: '/projects/5.jpg',  tech: ['Design & Figma'] },
-  { id: 'i6',  name: '', desc: '', url: '/projects/6.jpg',  tech: ['Design & Figma'] },
-  { id: 'i7',  name: '', desc: '', url: '/projects/8.jpg',  tech: ['Design & Figma'] },
-  { id: 'i8',  name: '', desc: '', url: '/projects/9.jpg',  tech: ['Design & Figma'] },
-  { id: 'i9',  name: '', desc: '', url: '/projects/10.jpg', tech: ['Design & Figma'] },
-  { id: 'i10', name: '', desc: '', url: '/projects/12.jpg', tech: ['Design & Figma'] },
-  { id: 'i11', name: '', desc: '', url: '/projects/1.jpg',  tech: ['Design & Figma'] },
-  { id: 'i12', name: '', desc: '', url: '/projects/13.jpg', tech: ['Design & Figma'] },
-  { id: 'i13', name: '', desc: '', url: '/projects/15.jpg', tech: ['Design & Figma'] },
+  }
 ]
 
 const filterButtons = [
