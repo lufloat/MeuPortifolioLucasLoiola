@@ -77,8 +77,7 @@ const Experience = () => {
                   ? 'left-full -translate-x-1/2 lg:left-1/2'
                   : 'right-full translate-x-1/2 lg:right-1/2'
               }`}
-            >
-              {date - experienceData.length + i + 1}
+            >{data.year}
             </div>
           </div>
         ))}
