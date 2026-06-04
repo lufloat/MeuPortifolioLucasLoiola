@@ -54,7 +54,7 @@ export const arrowLeftIcon = <ArrowLeftSFillIcon />
 export const aboutText = "Desenvolvedor Full Stack com experiência em C#, .NET, Python, APIs REST, Clean Architecture, PostgreSQL, React e Next.js. Atuo no desenvolvimento de sistemas escaláveis e soluções web modernas, aplicando boas práticas de arquitetura, performance e qualidade de software. Possuo também conhecimentos em UX/UI Design e Figma, contribuindo para a criação de produtos digitais com foco em usabilidade e experiência do usuário."
 export const experienceData = [
   {
-    year: 6,
+    year: 2026,
     title: 'Programador C# - Grupo Odilon Santos (2025 - atual)',
     education: 'Responsável pelo desenvolvimento de um sistema CRM voltado para gestão de impressoras, incluindo criação de funcionalidades, estruturação do sistema e design de layouts para a interface.',
     experience: [
@@ -63,7 +63,7 @@ export const experienceData = [
     ],
   },
   {
-    year: 5,
+    year: 2025,
     title: 'Certificações Alura e Udemy',
     education: 'Além da graduação em Engenharia de Software, realizo formação contínua por meio de cursos especializados na Alura e Udemy, com foco em desenvolvimento full stack, arquitetura de software e tecnologias modernas',
     experience: [
@@ -72,7 +72,7 @@ export const experienceData = [
     ],
   },
   {
-    year: 4,
+    year: 2024,
     title: 'Faculdade Engenharia de Software (2024 - 2027)',
     education: 'Faculdade Anhanguera',
     experience: [
@@ -81,7 +81,7 @@ export const experienceData = [
     ],
   },
   {
-    year: 3,
+    year: 2024,
     title: 'Grupo Jaime Câmara (2021 - 2024)',
     education: 'Faculdade Anhanguera e cursos Alura e Udemy.',
     experience: [
