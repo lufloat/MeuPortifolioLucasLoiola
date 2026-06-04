@@ -181,7 +181,8 @@ export const projectsData = [
     url: '/projects/crm.png',
     tech: ['HTML', 'CSS', 'JavaScript', 'React', 'TailwindCSS', 'C#', '.NET'],
   },
-  
+]
+
 export const projectsButton = [
   'All',
   'Design & Figma',
