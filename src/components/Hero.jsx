@@ -77,7 +77,7 @@ const Hero = () => {
             Meu nome é Lucas Fernandes
           </h1>
           <p className="text-lg tracking-wider text-gray-700 dark:text-gray-200 transition-colors">
-            <span>Desenvolvedor Full Stack | Designer UX/UI 🚀 </span>
+            <span> Desenvolvedor Full Stack Python | C# | React </span>
           </p>
         </motion.div>
         <motion.div
